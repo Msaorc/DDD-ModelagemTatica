@@ -10,4 +10,4 @@ customer.activate();
 
 const item1 = new OrderItem("1", "Camiseta", 25.90);
 const item2 = new OrderItem("2", "Chinelo", 15.00);
-const order = new Order("254718", customer._id, [item1, item2]);
+const order = new Order("254718", customer.id, [item1, item2]);
