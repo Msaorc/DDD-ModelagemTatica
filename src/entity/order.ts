@@ -27,9 +27,13 @@ export default class Order{
         if (this._items.length === 0) {
             throw new Error("Item qtd must be graeter than 0");            
         }
+
+        if (this._items.some(items => items.quantity <= 0)){
+            throw new Error("Quantity must be grater than 0");
+        }
     }
 
     total(): number {
-        return this._items.reduce((acc, item) => acc + item._price, 0);
+        return this._items.reduce((acc, item) => acc + item.itemTotal(), 0);
     }
 }

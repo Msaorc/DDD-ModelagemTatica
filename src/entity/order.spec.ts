@@ -21,11 +21,18 @@ describe("Order unit testes", () => {
         }).toThrow("Item qtd must be graeter than 0");
     });
 
-    it("should throw error when name is empty", () => {
-        const item = new OrderItem("1", "Item 1", 55);
-        const item2 = new OrderItem("2", "Item 2", 75);
+    it("should calculate total", () => {
+        const item = new OrderItem("1", "Item 1", 55, "p1", 2);
+        const item2 = new OrderItem("2", "Item 2", 75, "p2", 4);
         const order = new Order("1", "123", [item, item2]);
 
-        expect(order.total()).toEqual(130);
+        expect(order.total()).toEqual(410);
+    });
+
+    it("should throw error if the item qtd is less or equal zero", () => {
+        expect(() => {
+            const item = new OrderItem("1", "Item 1", 55, "p1", 0);
+            const order = new Order("1", "123", [item]);
+        }).toThrow("Quantity must be grater than 0");
     });
 });
