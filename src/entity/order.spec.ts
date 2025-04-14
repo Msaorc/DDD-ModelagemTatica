@@ -33,6 +33,6 @@ describe("Order unit testes", () => {
         expect(() => {
             const item = new OrderItem("1", "Item 1", 55, "p1", 0);
             const order = new Order("1", "123", [item]);
-        }).toThrow("Quantity must be grater than 0");
+        }).toThrow("Quantity cannot be less than or equal to zero");
     });
 });
