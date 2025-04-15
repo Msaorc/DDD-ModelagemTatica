@@ -24,7 +24,7 @@ describe("Customer unit testes", () => {
     it("should activate customer", () => {
         const customer = new Customer("1", "Customer Address");
         const address = new Address("Street 1", 123, "12457-888", "Piratininga");
-        customer.setAddress(address);
+        customer.Address = address;
         customer.activate();
 
         expect(customer.isActive()).toBe(true);
@@ -43,4 +43,15 @@ describe("Customer unit testes", () => {
             customer.activate();
         }).toThrow("Address is mandatory to activate a customer");
     });
+
+    it("shold add reward points", () => {
+        const customer = new Customer("1", "Customer1");
+        expect(customer.rewardPoints).toBe(0);
+
+        customer.addRewardPoints(20);
+        expect(customer.rewardPoints).toBe(20)
+
+        customer.addRewardPoints(10);
+        expect(customer.rewardPoints).toBe(30)
+    })
 });
