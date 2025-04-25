@@ -1,7 +1,4 @@
 import { Sequelize } from "sequelize-typescript";
-import ProductModel from "../db/sequelize/model/product.model";
-import Product from "../../domain/entity/product";
-import ProductRepository from "./product.repository";
 import CustomerModel from "../db/sequelize/model/customer.model";
 import CustomerRepository from "./customer.repository";
 import Customer from "../../domain/entity/customer";
