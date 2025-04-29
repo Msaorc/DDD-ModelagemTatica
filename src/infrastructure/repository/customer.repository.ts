@@ -1,7 +1,7 @@
-import CustomerRespositoryInterface from "../../domain/repository/customer-repository";
 import Customer from "../../domain/entity/customer";
 import CustomerModel from "../db/sequelize/model/customer.model";
 import Address from "../../domain/entity/address";
+import CustomerRespositoryInterface from "../../domain/repository/customer.repository";
 
 export default class CustomerRepository implements CustomerRespositoryInterface{
 

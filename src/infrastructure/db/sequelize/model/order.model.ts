@@ -1,8 +1,6 @@
 import {Table, Model, PrimaryKey, Column, DataType, HasMany, ForeignKey, BelongsTo} from 'sequelize-typescript';
 import CustomerModel from './customer.model';
-import Customer from '../../../../domain/entity/customer';
-import OrderItem from '../../../../domain/entity/order_item';
-import OrderItemModel from './order-items.model';
+// import OrderItemModel from './order-items.model';
 
 @Table({
     tableName: "order",
@@ -20,10 +18,10 @@ export default class OrderModel extends Model {
     declare customer_id: string;
 
     @BelongsTo(() => CustomerModel)
-    declare customer: Customer;
+    declare customer: CustomerModel;
 
-    @HasMany(() => OrderItemModel)
-    declare items: OrderItemModel[];
+    @HasMany(() => require('./order-items.model').default)
+    declare items: any[];
 
     @Column({allowNull: false})
     declare total: number;

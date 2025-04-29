@@ -10,6 +10,7 @@ import ProductRepository from "./product.repository";
 import Product from "../../domain/entity/product";
 import OrderItem from "../../domain/entity/order_item";
 import Order from "../../domain/entity/order";
+import OrderRepository from "./order.repository";
 
 
 describe("Order repository test", () => {
@@ -23,7 +24,7 @@ describe("Order repository test", () => {
             logging: false,
             sync: { force: true},
         });
-        sequileze.addModels([CustomerModel, OrderModel, OrderItemModel, ProductModel]);
+        sequileze.addModels([CustomerModel, OrderItemModel, OrderModel, ProductModel]);
         await sequileze.sync();
     });
 
@@ -60,31 +61,28 @@ describe("Order repository test", () => {
         });
 
         expect(orderModel.toJSON()).toStrictEqual({
-            id: "1",
-            customer_id: "123",
+            id: order.id,
+            customer_id: customer.id,
             total: order.total(),
             items: [
                 {
                     id: orderItem.id,
                     name: orderItem.name,
-                    price: orderItem.price,
+                    price: orderItem.price.toString(),
+                    product_id: orderItem.productId,
                     quantity: orderItem.quantity,
-                    order_id: "1"
-                }
-            ]
+                    order_id: order.id
+                },
+            ],
         })
     });
 
-    it("should update a customer", async () => {
+    it("should update a order", async () => {
     });
 
-    it("should find a customer", async () => {
+    it("should find a order", async () => {
     });
 
-    it("should throw an error when customer is not found", async () => {
-        
-    });
-
-    it("should find all customers", async () => {
+    it("should find all orders", async () => {
     });
 });
