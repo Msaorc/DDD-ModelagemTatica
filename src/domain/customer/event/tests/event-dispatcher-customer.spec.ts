@@ -1,13 +1,11 @@
-import Address from "../../../entity/address";
 import Customer from "../../entity/customer";
 import EventDispatcher from "../../../@shared/event/event-dispatcher";
-import SendEmailWhenProductIsCreatedHandler from "../../../product/event/handler/send-email-when-product-is-created.handler";
-import ProductCreatedEvent from "../../product/product-created.event";
 import AddressCustomerChangeEvent from "../address-customer-change.event";
 import CustomerCreatedEvent from "../customer-created.event";
 import EnviaConsoleLogHandler from "../handler/envia-console-log.handler";
 import EnviaConsoleLog1Handler from "../handler/envia-console-log1-handler";
 import EnviaConsoleLog2Handler from "../handler/envia-console-log2-handler";
+import Address from "../../value-object/address";
 
 describe("Domain events tests", () => {
 

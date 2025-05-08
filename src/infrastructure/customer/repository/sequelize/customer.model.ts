@@ -1,4 +1,4 @@
-import {Table, Model, PrimaryKey, Column, DataType, HasMany} from 'sequelize-typescript';
+import {Table, Model, PrimaryKey, Column} from 'sequelize-typescript';
 
 @Table({
     tableName: "customers",

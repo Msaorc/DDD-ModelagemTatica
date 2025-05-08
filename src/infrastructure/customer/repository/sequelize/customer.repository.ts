@@ -1,7 +1,7 @@
-import Customer from "../../../../domain/customer/entity/customer";
 import CustomerModel from "./customer.model";
 import Address from "../../../../domain/customer/value-object/address";
 import CustomerRespositoryInterface from "../../../../domain/customer/repository/customer.repository";
+import Customer from "../../../../domain/customer/entity/customer";
 
 export default class CustomerRepository implements CustomerRespositoryInterface{
 
