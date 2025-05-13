@@ -1,6 +1,6 @@
-import Product from "./product";
-import ProductB from "./product-b";
-import ProductInterface from "./product.interface";
+import Product from "../entity/product";
+import ProductB from "../entity/product-b";
+import ProductInterface from "../entity/product.interface";
 import {v4 as uuid} from 'uuid';
 
 export default class ProductFactory {
